@@ -41,28 +41,22 @@ class MainNavActivity : AppCompatActivity() {
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
+//        val transaction =    manager.beginTransaction()
+//        val homeFragment =   HomeFragment()
+//        transaction.replace(R.id.frame_view,homeFragment)
+//        transaction.addToBackStack(null)
+//        transaction.commit()
+
         val transaction =    manager.beginTransaction()
-        val homeFragment =   HomeFragment()
-        transaction.replace(R.id.frame_view,homeFragment)
+        val registerFragment =  RegisterFragment()
+        transaction.replace(R.id.frame_view,registerFragment)
         transaction.addToBackStack(null)
         transaction.commit()
 
-       // setupRecyclerView()
+
     }
 
-//    private fun setupRecyclerView() {
-//
-//        val layoutManager = LinearLayoutManager(this)
-//        layoutManager.orientation = LinearLayoutManager.VERTICAL
-//        recyclerView.layoutManager = layoutManager
-//       recyclerView.isHorizontalFadingEdgeEnabled = true
-//
-//
-//        val adapter= HobbiesAdapter(this, Supplier.hobbies)
-//        recyclerView.adapter = adapter
-//
-//
-//    }
+
 
 }
 
