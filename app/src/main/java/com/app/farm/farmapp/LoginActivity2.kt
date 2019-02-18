@@ -238,7 +238,7 @@ class LoginActivity2 : AppCompatActivity(), LoaderCallbacks<Cursor> {
             android.R.layout.simple_dropdown_item_1line, emailAddressCollection
         )
 
-        email.setAdapter(adapter)
+       // email.setAdapter(adapter)
     }
 
     object ProfileQuery {

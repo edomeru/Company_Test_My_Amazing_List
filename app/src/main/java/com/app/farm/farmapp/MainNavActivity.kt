@@ -48,7 +48,7 @@ class MainNavActivity : AppCompatActivity() {
 //        transaction.commit()
 
         val transaction =    manager.beginTransaction()
-        val registerFragment =  RegisterFragment()
+        val registerFragment =  HomeFragment()
         transaction.replace(R.id.frame_view,registerFragment)
         transaction.addToBackStack(null)
         transaction.commit()

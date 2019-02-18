@@ -37,6 +37,11 @@ class RegisterActivity : AppCompatActivity() {
             intent.type = "image/*"
             startActivityForResult(intent, 0)
         }
+
+        already_have_account_text_view.setOnClickListener {
+            val intent = Intent(this,LoginActivity2::class.java)
+            startActivity(intent)
+        }
     }
 
 
