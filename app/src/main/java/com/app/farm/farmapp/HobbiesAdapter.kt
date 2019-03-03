@@ -8,9 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.home_feed_list_item.view.*
 import kotlinx.android.synthetic.main.list_item.view.*
+import okhttp3.internal.Util.indexOf
 
 
-class HobbiesAdapter(val context: Context, private val hobbies: List<Hobby>) : RecyclerView.Adapter<HobbiesAdapter.MyViewHolder>() {
+class HobbiesAdapter(val context: Context, private val homefeed: HomeFragment.HomeFeed) : RecyclerView.Adapter<HobbiesAdapter.MyViewHolder>() {
 
 	companion object {
 		val TAG: String = HobbiesAdapter::class.java.simpleName
@@ -22,11 +23,11 @@ class HobbiesAdapter(val context: Context, private val hobbies: List<Hobby>) : R
 	}
 
 	override fun getItemCount(): Int {
-		return hobbies.size
+		return homefeed.post.count()
 	}
 
 	override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-		val hobby = hobbies[position]
+		val hobby = homefeed.post.get(position)
 		holder.setData(hobby, position)
 	}
 
@@ -57,15 +58,15 @@ class HobbiesAdapter(val context: Context, private val hobbies: List<Hobby>) : R
 		//	}
 		}
 
-		fun setData(hobby: Hobby?, pos: Int) {
+		fun setData(hobby: HomeFragment.Post?, pos: Int) {
 			hobby?.let {
-				itemView.username.text = hobby?.title
+				itemView.username.text = hobby.caption
 			}?: run {
 				itemView.username.text = "no value"
 			}
 
-			this.currentHobby = hobby
-			this.currentPosition = pos
+//			this.currentHobby = hobby
+//			this.currentPosition = pos
 		}
 	}
 }
