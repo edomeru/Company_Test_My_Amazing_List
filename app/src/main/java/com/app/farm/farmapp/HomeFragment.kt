@@ -99,13 +99,8 @@ class HomeFragment: Fragment(){
                     {
                         recyclerview!!.adapter = homeadapter
 
-                    });
-                //adapter = HobbiesAdapter(this!!.activity!!, this!!.homeFeed!!)
-             //   this@HomeFragment.recyclerview!!.adapter = HobbiesAdapter(this!!.activity!!, homeFeed)
+                    })
 
-//                runOnUiThread {
-//                    recyclerview!!.adapter = HobbiesAdapter(homeFeed)
-//                }
             }
 
             override fun onFailure(call: Call?, e: IOException?) {
